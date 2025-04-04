@@ -6,6 +6,7 @@ import (
 
     "github.com/go-chi/chi/v5"
     "github.com/go-chi/chi/v5/middleware"
+    "myapp/handlers"
 )
 
 func main() {
@@ -28,8 +29,8 @@ func main() {
     r.Get("/", func(w http.ResponseWriter, r *http.Request) {
         w.Write([]byte("API de Login v1.0"))
     })
-    r.Post("/register", PostRegisterHandler(db))
-    r.Post("/login", PostLoginHandler(db))
+    r.Post("/register", handlers.PostRegisterHandler(db))
+    r.Post("/login", handlers.PostLoginHandler(db))
 
     // Ruta para obtener datos de usuario (protegida más tarde con JWT)
     // Por ahora, cualquiera puede acceder si conoce el ID

@@ -28,8 +28,8 @@ func main() {
     r.Get("/", func(w http.ResponseWriter, r *http.Request) {
         w.Write([]byte("API de Login v1.0"))
     })
-    r.Post("/register", postRegisterHandler(db))
-    r.Post("/login", postLoginHandler(db))
+    r.Post("/register", PostRegisterHandler(db))
+    r.Post("/login", PostLoginHandler(db))
 
     // Ruta para obtener datos de usuario (protegida más tarde con JWT)
     // Por ahora, cualquiera puede acceder si conoce el ID

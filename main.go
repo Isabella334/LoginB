@@ -33,7 +33,6 @@ func main() {
 
     // Ruta para obtener datos de usuario (protegida más tarde con JWT)
     // Por ahora, cualquiera puede acceder si conoce el ID
-    r.Get("/users/{userID}", getUserHandler(db))
 
 
     // Iniciar servidor
